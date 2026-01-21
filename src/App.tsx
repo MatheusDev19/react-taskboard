@@ -1,6 +1,6 @@
 import { Container, Stack, Typography } from "@mui/material";
 import Header from "./components/Header";
-import { GlobalProvider } from "./provider";
+import { GlobalProvider } from "./GlobalProvider";
 
 export default function App() {
   return (
