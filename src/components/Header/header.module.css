@@ -4,13 +4,18 @@
   justify-content: space-between;
   align-items: center;
   padding: var(--spacing-md) var(--spacing-lg);
+  height: 64px;
   background-color: var(--bg-header);
-  border-bottom: 1px solid var(--border-color-header);
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-md);
 }
 
 .header-title {
   color: var(--color-primary);
   font-weight: var(--font-weight-xl);
   font-size: var(--font-size-xxl);
+}
+
+.header-icons {
+  display: flex;
+  gap: var(--spacing-md);
 }
