@@ -5,7 +5,7 @@ import clsx from "clsx";
 export default function Header() {
   return (
     <Box component={"header"} className={styles.header}>
-      <Typography className={styles.headerTitle} variant="h4">
+      <Typography className={styles["header-title"]} variant="h4">
         TaskBoard
       </Typography>
       <Button

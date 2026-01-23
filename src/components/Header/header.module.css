@@ -9,7 +9,7 @@
   box-shadow: var(--shadow-sm);
 }
 
-.headerTitle {
+.header-title {
   color: var(--color-primary);
   font-weight: var(--font-weight-xl);
   font-size: var(--font-size-xxl);
