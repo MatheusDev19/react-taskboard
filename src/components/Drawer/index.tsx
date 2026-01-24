@@ -42,7 +42,7 @@ export default function Drawer() {
             drawerToggle={drawerToggle}
             setDrawerToggle={setDrawerToggle}
             icon={clockIcon}
-            title="Recent"
+            title="Recents"
             subItems={[
               { title: "Software Engineer", url: "/software-engineer" },
             ]}
