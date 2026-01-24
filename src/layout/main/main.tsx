@@ -8,9 +8,9 @@ export default function MainLayout() {
   return (
     <Stack className={styles["page-stack"]}>
       <Header />
-      <Box className={styles["page-content"]}>
+      <Box className={styles["page-content"]} width={"100%"}>
         <Drawer />
-        <Container maxWidth="xl" className={styles["content-container"]}>
+        <Container maxWidth={false} className={styles["content-container"]}>
           <Outlet />
         </Container>
       </Box>
