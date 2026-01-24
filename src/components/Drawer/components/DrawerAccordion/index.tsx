@@ -9,8 +9,9 @@ import {
 import { useState } from "react";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import pinboardIcon from "../../../../assets/layout/sidebar/icons/pinboard.svg";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import styles from "./drawerAccordion.module.css";
+import clsx from "clsx";
 
 interface DrawerAccordionProps {
   drawerToggle: boolean;
@@ -28,6 +29,8 @@ export default function DrawerAccordion({
   subItems,
 }: DrawerAccordionProps) {
   const navigate = useNavigate();
+  const boardPath = useLocation().pathname;
+
   const [expanded, setExpanded] = useState(!drawerToggle);
   return (
     <Accordion
@@ -84,7 +87,11 @@ export default function DrawerAccordion({
           {subItems.map((subItem) => (
             <Box
               key={subItem.title}
-              className={styles["details-content"]}
+              className={clsx(styles["details-item"], {
+                [styles["details-item-active"]]: boardPath.includes(
+                  subItem.url,
+                ),
+              })}
               onClick={() => {
                 navigate(subItem.url);
               }}
