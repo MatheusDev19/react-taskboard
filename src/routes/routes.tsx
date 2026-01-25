@@ -1,10 +1,10 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import MainLayout from "../layout/main/main";
+import RootLayout from "../layout";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <MainLayout />,
+    element: <RootLayout />,
     children: [
       {
         path: "/software-engineer",
@@ -18,6 +18,6 @@ const router = createBrowserRouter([
   },
 ]);
 
-export function AppRoutes() {
+export function AppRouter() {
   return <RouterProvider router={router} />;
 }
