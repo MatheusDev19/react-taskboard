@@ -4,12 +4,45 @@
 }
 
 .page-content {
-  display: flex;
+  display: grid;
+  grid-template-columns: 244px 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas:
+    "drawer content";
   overflow: hidden;
 }
 
 .content-container {
+  grid-area: content;
   padding-top: var(--spacing-lg);
   padding-bottom: var(--spacing-lg);
   overflow: auto;
+  background: var(--bg-body);
+}
+
+#drawer {
+  grid-area: drawer;
+}
+
+#navigationBar {
+  display: none;
+}
+
+@media (max-width: 960px) {
+  .page-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas: "navigationBar" "content";
+    overflow: hidden;
+  }
+
+  #drawer {
+    display: none;
+  }
+
+  #navigationBar {
+    display: grid;
+     grid-area: navigationBar;
+  }
 }

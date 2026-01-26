@@ -15,7 +15,6 @@ export default function Drawer() {
     <Box
       className={styles.drawer}
       sx={{
-        display: { xs: "none", md: "block" },
         backgroundImage: `url(${sideBarBg})`,
         width: drawerToggle ? 60 : 244,
       }}

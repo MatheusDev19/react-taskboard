@@ -27,7 +27,7 @@ export default function BoardHeader({ title }: BoardHeaderProps) {
 
         <Button
           className="btn btn-contained"
-          sx={{ display: { xs: "inline-flex", md: " none !important" } }}
+          sx={{ display: {  md: " none !important" } }}
         >
           +
         </Button>

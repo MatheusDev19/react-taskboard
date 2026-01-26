@@ -6,16 +6,19 @@ import styles from "./main.module.css";
 import NavigationBar from "../../components/NavigationBar";
 
 export default function MainLayout() {
+
   return (
     <Stack className={styles["page-stack"]}>
       <Header />
       <Box
         className={styles["page-content"]}
-        width={"100%"}
-        flexDirection={{ xs: "column", md: "row" }}
       >
-        <Drawer />
-        <NavigationBar />
+        <Box id={styles["drawer"]}>
+          <Drawer />
+        </Box>
+        <Box id={styles["navigationBar"]}>
+          <NavigationBar />
+        </Box>
         <Container maxWidth={false} className={styles["content-container"]}>
           <Outlet />
         </Container>
