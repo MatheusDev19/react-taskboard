@@ -1,5 +1,11 @@
 .shell {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "header"
+    "content"
+    "footer";
+  grid-template-rows: 64px 1fr 80px;
   min-height: 100dvh;
 }
 
@@ -17,6 +23,7 @@
 
 .main {
   grid-area: content;
+  height: 100%;
 }
 
 .footer {
@@ -30,7 +37,7 @@
 @media screen and (min-width: 768px) {
   .shell {
     display: grid;
-    grid-template-columns: 244px 1fr;
+    grid-template-columns: auto 1fr;
     grid-template-areas:
       "header header"
       "navbar content";
@@ -46,7 +53,7 @@
   }
 
   .main {
-    height: 100dvh;
+    height: 100%;
   }
 
   .footer {
