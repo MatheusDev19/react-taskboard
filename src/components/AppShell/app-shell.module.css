@@ -1,0 +1,55 @@
+.shell {
+  display: flex;
+  min-height: 100dvh;
+}
+
+.header {
+  grid-area: header;
+  display: flex;
+  height: 64px;
+  width: 100%;
+}
+
+.navbar {
+  grid-area: navbar;
+  display: none;
+}
+
+.main {
+  grid-area: content;
+}
+
+.footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  height: 80px;
+  grid-area: footer;
+}
+
+@media screen and (min-width: 768px) {
+  .shell {
+    display: grid;
+    grid-template-columns: 244px 1fr;
+    grid-template-areas:
+      "header header"
+      "navbar content";
+    height: 100dvh;
+  }
+
+  .header {
+    height: 64px;
+  }
+
+  .navbar {
+    display: block;
+  }
+
+  .main {
+    height: 100dvh;
+  }
+
+  .footer {
+    display: none;
+  }
+}
