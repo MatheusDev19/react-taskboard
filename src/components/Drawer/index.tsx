@@ -1,8 +1,6 @@
 import { Box, Stack } from "@mui/material";
-import sideBarBg from "../../assets/layout/sidebar/images/sideBarBg.svg";
 import { useState } from "react";
 import DrawerHeader from "./components/DrawerHeader";
-
 import boardIcon from "../../assets/layout/sidebar/icons/board.svg";
 import clockIcon from "../../assets/layout/sidebar/icons/clock.svg";
 import DrawerAccordion from "./components/DrawerAccordion";
@@ -12,14 +10,7 @@ export default function Drawer() {
   const [drawerToggle, setDrawerToggle] = useState(false);
 
   return (
-    <Box
-      className={styles.drawer}
-      sx={{
-        display: { xs: "none", sm: "block" },
-        backgroundImage: `url(${sideBarBg})`,
-        width: drawerToggle ? 60 : 244,
-      }}
-    >
+    <Box className={`${styles.drawer} ${drawerToggle ? styles.collapsed : ""}`}>
       <Stack spacing={2}>
         <DrawerHeader
           drawerToggle={drawerToggle}
