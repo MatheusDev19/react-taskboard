@@ -6,13 +6,10 @@ import styles from "./main.module.css";
 import NavigationBar from "../../components/NavigationBar";
 
 export default function MainLayout() {
-
   return (
     <Stack className={styles["page-stack"]}>
       <Header />
-      <Box
-        className={styles["page-content"]}
-      >
+      <Box className={styles["page-content"]}>
         <Box id={styles["drawer"]}>
           <Drawer />
         </Box>

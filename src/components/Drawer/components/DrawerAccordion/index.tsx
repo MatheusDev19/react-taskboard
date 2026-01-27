@@ -89,7 +89,9 @@ export default function DrawerAccordion({
             <Box
               key={subItem.title}
               className={clsx(styles["details-item"], {
-                [styles["details-item-active"]]: slug.includes(subItem.url.split("/").pop() || ""),
+                [styles["details-item-active"]]: slug.includes(
+                  subItem.url.split("/").pop() || "",
+                ),
               })}
               onClick={() => {
                 navigate(subItem.url);
