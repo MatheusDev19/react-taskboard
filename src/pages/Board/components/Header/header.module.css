@@ -1,0 +1,18 @@
+.header {
+  border-bottom: 1px solid var(--border-color-default);
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.header-title {
+  font-weight: var(--font-weight-xl);
+  color: var(--text-color-default);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

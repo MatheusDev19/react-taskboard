@@ -15,7 +15,6 @@ export default function Drawer() {
     <Box
       className={styles.drawer}
       sx={{
-        display: { xs: "none", md: "block" },
         backgroundImage: `url(${sideBarBg})`,
         width: drawerToggle ? 60 : 244,
       }}
@@ -42,7 +41,7 @@ export default function Drawer() {
             drawerToggle={drawerToggle}
             setDrawerToggle={setDrawerToggle}
             icon={clockIcon}
-            title="Recent"
+            title="Recents"
             subItems={[
               { title: "Software Engineer", url: "/software-engineer" },
             ]}
