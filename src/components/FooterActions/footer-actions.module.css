@@ -1,7 +1,8 @@
 .wrapper {
   display: flex;
   justify-content: space-around;
-  /* padding: 8px 16px; */
-  /* background-color: url("../../assets/layout/navigationBar/images/sideBarBg.svg"); */
-  /* height: 80px; */
+  align-items: center;
+  height: 100%;
+  padding: 8px 16px;
+  background: var(--color-primary);
 }
