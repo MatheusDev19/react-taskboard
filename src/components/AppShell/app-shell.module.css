@@ -1,0 +1,64 @@
+.shell {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "header"
+    "content"
+    "footer";
+  grid-template-rows: 64px 1fr 80px;
+  min-height: 100dvh;
+}
+
+.header {
+  grid-area: header;
+  display: flex;
+  height: 64px;
+  width: 100%;
+}
+
+.navbar {
+  grid-area: navbar;
+  display: none;
+}
+
+.main {
+  grid-area: content;
+  height: 100%;
+  padding: 14px;
+}
+
+.footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  height: 80px;
+  grid-area: footer;
+}
+
+@media screen and (min-width: 768px) {
+  .shell {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-areas:
+      "header header"
+      "navbar content";
+    height: 100dvh;
+  }
+
+  .header {
+    height: 64px;
+  }
+
+  .navbar {
+    display: block;
+  }
+
+  .main {
+    padding: 16px 40px;
+    height: 100%;
+  }
+
+  .footer {
+    display: none;
+  }
+}

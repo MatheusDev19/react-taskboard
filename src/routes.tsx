@@ -1,11 +1,11 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import MainLayout from "../layout/main/main";
-import Board from "../pages/Board/board";
+import Board from "./pages/Board/ index";
+import RootLayout from "./layout";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <MainLayout />,
+    element: <RootLayout />,
     children: [
       {
         path: "/:slug",
@@ -15,6 +15,6 @@ const router = createBrowserRouter([
   },
 ]);
 
-export function AppRoutes() {
+export function AppRouter() {
   return <RouterProvider router={router} />;
 }

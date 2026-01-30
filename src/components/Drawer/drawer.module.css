@@ -1,9 +1,24 @@
 .drawer {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .drawer {
+    display: block;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center bottom;
     box-shadow: 2px 0 4px rgba(0, 0, 0, 0.2);
-    height: calc(100vh - 64px);
+    height: calc(100dvh - 64px);
+    width: 244px;
+    overflow: hidden;
     position: relative;
-    transition: width 0.2s ease-in-out;
+    transition: width 0.3s ease;
+    will-change: width;
+    background-image: url("../../assets/layout/sidebar/images/sideBarBg.svg");
+  }
+
+  .collapsed {
+    width: 60px;
+  }
 }

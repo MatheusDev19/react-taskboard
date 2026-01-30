@@ -1,12 +1,13 @@
 .header {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  flex-direction: row;
   padding: var(--spacing-md) var(--spacing-lg);
   height: 64px;
   background-color: var(--bg-header);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  flex: 1;
 }
 
 .header-title {
