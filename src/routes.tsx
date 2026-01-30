@@ -1,4 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Board from "./pages/Board/ index";
 import RootLayout from "./layout";
 
 const router = createBrowserRouter([
@@ -7,12 +8,8 @@ const router = createBrowserRouter([
     element: <RootLayout />,
     children: [
       {
-        path: "/software-engineer",
-        element: <div>Software Engineer Page</div>,
-      },
-      {
-        path: "/requisition-engineer",
-        element: <div>Requisition Engineer Page</div>,
+        path: "/:slug",
+        element: <Board />,
       },
     ],
   },

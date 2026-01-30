@@ -1,0 +1,13 @@
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 16px;
+  background-color: url("../../assets/layout/navigationBar/images/sideBarBg.svg");
+  height: 80px;
+}
+
+/* @media screen and (min-width: 768px) {
+  .wrapper {
+    display: none;
+  }
+} */

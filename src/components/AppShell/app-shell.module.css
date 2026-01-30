@@ -24,6 +24,7 @@
 .main {
   grid-area: content;
   height: 100%;
+  padding: 14px;
 }
 
 .footer {
@@ -53,6 +54,7 @@
   }
 
   .main {
+    padding: 16px 40px;
     height: 100%;
   }
 
