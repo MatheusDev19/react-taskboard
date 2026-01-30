@@ -1,5 +1,10 @@
 import { Outlet } from "react-router-dom";
-import AppShell from "./components/AppShell";
+import AppShell, {
+  AppShellFooter,
+  AppShellHeader,
+  AppShellMain,
+  AppShellNavbar,
+} from "./components/AppShell";
 import Header from "./components/Header";
 import Drawer from "./components/Drawer";
 import FooterActions from "./components/FooterActions";
@@ -7,18 +12,18 @@ import FooterActions from "./components/FooterActions";
 export default function RootLayout() {
   return (
     <AppShell>
-      <AppShell.Header>
+      <AppShellHeader>
         <Header />
-      </AppShell.Header>
-      <AppShell.Navbar>
+      </AppShellHeader>
+      <AppShellNavbar>
         <Drawer />
-      </AppShell.Navbar>
-      <AppShell.Main>
+      </AppShellNavbar>
+      <AppShellMain>
         <Outlet />
-      </AppShell.Main>
-      <AppShell.Footer>
+      </AppShellMain>
+      <AppShellFooter>
         <FooterActions />
-      </AppShell.Footer>
+      </AppShellFooter>
     </AppShell>
   );
 }

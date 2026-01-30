@@ -6,7 +6,7 @@ import styles from "./footer-actions.module.css";
 
 export default function FooterActions() {
   return (
-    <Box className={styles.wrapper}>
+    <Box className={styles.wrapper} borderTop={1} borderColor="divider">
       <NavigationItem
         title={"Boards"}
         icon={boardIcon}

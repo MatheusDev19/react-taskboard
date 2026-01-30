@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Board from "./pages/Board/ index";
 import RootLayout from "./layout";
+import Board from "./pages/Board";
 
 const router = createBrowserRouter([
   {
