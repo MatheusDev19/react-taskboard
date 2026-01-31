@@ -1,10 +1,10 @@
 import { Stack } from "@mui/material";
-import useSlug from "../../hooks/useSlug";
 import BoardHeader from "./components/Header/header";
 import Kanban from "../../components/Kanban";
+import { useGetSlug } from "../../hooks/use-get-slug";
 
 export default function Board() {
-  const { slug } = useSlug();
+  const slug = useGetSlug();
 
   return (
     <Stack width={"100%"} height={"100%"}>

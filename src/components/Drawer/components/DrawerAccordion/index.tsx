@@ -12,7 +12,7 @@ import pinboardIcon from "../../../../assets/layout/sidebar/icons/pinboard.svg";
 import { useNavigate } from "react-router-dom";
 import styles from "./drawerAccordion.module.css";
 import clsx from "clsx";
-import useSlug from "../../../../hooks/useSlug";
+import useGetSlug from "../../../../hooks/use-get-slug";
 
 interface DrawerAccordionProps {
   drawerToggle: boolean;
@@ -30,7 +30,7 @@ export default function DrawerAccordion({
   subItems,
 }: DrawerAccordionProps) {
   const navigate = useNavigate();
-  const { slug } = useSlug();
+  const { slug } = useGetSlug();
   const [expanded, setExpanded] = useState(!drawerToggle);
 
   return (
