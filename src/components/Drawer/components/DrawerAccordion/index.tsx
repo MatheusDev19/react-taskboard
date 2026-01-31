@@ -12,7 +12,7 @@ import pinboardIcon from "../../../../assets/layout/sidebar/icons/pinboard.svg";
 import { useNavigate } from "react-router-dom";
 import styles from "./drawerAccordion.module.css";
 import clsx from "clsx";
-import {useGetSlug} from "../../../../hooks/use-get-slug";
+import { useGetSlug } from "../../../../hooks/use-get-slug";
 
 interface DrawerAccordionProps {
   drawerToggle: boolean;
@@ -30,7 +30,7 @@ export default function DrawerAccordion({
   subItems,
 }: DrawerAccordionProps) {
   const navigate = useNavigate();
-  const slug  = useGetSlug();
+  const slug = useGetSlug();
   const [expanded, setExpanded] = useState(!drawerToggle);
 
   return (
@@ -70,10 +70,7 @@ export default function DrawerAccordion({
               }
             }}
           />
-          <Typography
-            className={styles["summary-title"]}
-            display={drawerToggle ? "none" : "block"}
-          >
+          <Typography className={styles["summary-title"]} display={drawerToggle ? "none" : "block"}>
             {title}
           </Typography>
         </Box>
@@ -89,9 +86,7 @@ export default function DrawerAccordion({
             <Box
               key={subItem.title}
               className={clsx(styles["details-item"], {
-                [styles["details-item-active"]]: slug.includes(
-                  subItem.url.split("/").pop() || "",
-                ),
+                [styles["details-item-active"]]: slug.includes(subItem.url.split("/").pop() || ""),
               })}
               onClick={() => {
                 navigate(subItem.url);
@@ -103,9 +98,7 @@ export default function DrawerAccordion({
                 alt="Pin Icon"
                 className={styles["details-icon"]}
               />
-              <Typography className={styles["details-title"]}>
-                {subItem.title}
-              </Typography>
+              <Typography className={styles["details-title"]}>{subItem.title}</Typography>
             </Box>
           ))}
         </Stack>

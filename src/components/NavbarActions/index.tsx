@@ -9,12 +9,7 @@ interface NavbarActionsProps {
 export default function NavbarActions({ to }: NavbarActionsProps) {
   return (
     <Stack>
-      <MuiLink
-        component={Link}
-        to={to}
-        underline="none"
-        className={styles.link}
-      >
+      <MuiLink component={Link} to={to} underline="none" className={styles.link}>
         Main
       </MuiLink>
     </Stack>

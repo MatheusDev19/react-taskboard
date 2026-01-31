@@ -8,19 +8,10 @@ interface DrawerHeaderProps {
   setDrawerToggle: (value: boolean) => void;
 }
 
-export default function DrawerHeader({
-  drawerToggle,
-  setDrawerToggle,
-}: DrawerHeaderProps) {
+export default function DrawerHeader({ drawerToggle, setDrawerToggle }: DrawerHeaderProps) {
   return (
-    <Box
-      className={styles["drawer-header"]}
-      justifyContent={drawerToggle ? "center" : "flex-end"}
-    >
-      <IconButton
-        className={styles["icon-button"]}
-        onClick={() => setDrawerToggle(!drawerToggle)}
-      >
+    <Box className={styles["drawer-header"]} justifyContent={drawerToggle ? "center" : "flex-end"}>
+      <IconButton className={styles["icon-button"]} onClick={() => setDrawerToggle(!drawerToggle)}>
         {drawerToggle ? <ChevronRightIcon /> : <ChevronLeftIcon />}
       </IconButton>
     </Box>

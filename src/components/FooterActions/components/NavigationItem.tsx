@@ -8,11 +8,7 @@ interface NavigationItemProps {
   subItems: { title: string; url: string }[];
 }
 
-export default function NavigationItem({
-  title,
-  icon,
-  subItems,
-}: NavigationItemProps) {
+export default function NavigationItem({ title, icon, subItems }: NavigationItemProps) {
   const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);

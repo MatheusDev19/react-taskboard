@@ -12,10 +12,7 @@ export default function Drawer() {
   return (
     <Box className={`${styles.drawer} ${drawerToggle ? styles.collapsed : ""}`}>
       <Stack spacing={2}>
-        <DrawerHeader
-          drawerToggle={drawerToggle}
-          setDrawerToggle={setDrawerToggle}
-        />
+        <DrawerHeader drawerToggle={drawerToggle} setDrawerToggle={setDrawerToggle} />
 
         <Stack px={1}>
           <DrawerAccordion
@@ -34,9 +31,7 @@ export default function Drawer() {
             setDrawerToggle={setDrawerToggle}
             icon={clockIcon}
             title="Recents"
-            subItems={[
-              { title: "Software Engineer", url: "/software-engineer" },
-            ]}
+            subItems={[{ title: "Software Engineer", url: "/software-engineer" }]}
           />
         </Stack>
       </Stack>

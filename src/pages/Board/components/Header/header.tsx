@@ -25,10 +25,7 @@ export default function BoardHeader({ title }: BoardHeaderProps) {
           CREATE TASK
         </Button>
 
-        <Button
-          className="btn btn-contained"
-          sx={{ display: { md: " none !important" } }}
-        >
+        <Button className="btn btn-contained" sx={{ display: { md: " none !important" } }}>
           +
         </Button>
       </Box>
