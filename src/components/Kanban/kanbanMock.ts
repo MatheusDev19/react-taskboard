@@ -1,0 +1,59 @@
+import { Kanban } from "../../types/Kanban";
+
+export const kanbanMock: Kanban = {
+  columns: [
+    {
+      id: "1",
+      name: "To do",
+      tasks: [
+        {
+          id: "1",
+          description: "Task 1",
+          status: "done",
+          responsible: "user",
+          labels: ["Home", "Office"],
+        },
+        {
+          id: "2",
+          description: "Task 2",
+          status: "done",
+          responsible: "user",
+          labels: ["Home", "Office"],
+        },
+      ],
+    },
+    {
+      id: "2",
+      name: "In Progress",
+      tasks: [
+        {
+          id: "3",
+          description: "Task 3",
+          status: "done",
+          responsible: "user",
+          labels: ["Home", "Office"],
+        },
+      ],
+    },
+    {
+      id: "3",
+      name: "Done",
+      tasks: [
+        {
+          id: "4",
+          description: "Task 4",
+          status: "done",
+          responsible: "user",
+          labels: ["Home", "Office"],
+        },
+        {
+          id: "5",
+          description: "Task 5",
+          status: "done",
+          responsible: "user",
+          labels: ["Home", "Office"],
+        },
+      ],
+    },
+  ],
+};

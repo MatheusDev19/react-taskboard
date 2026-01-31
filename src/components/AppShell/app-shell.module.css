@@ -24,6 +24,7 @@
 .main {
   grid-area: content;
   height: 100%;
+  overflow: auto;
   padding: 14px;
 }
 
