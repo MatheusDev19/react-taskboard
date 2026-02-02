@@ -1,8 +1,8 @@
 import { Box } from "@mui/material";
 import styles from "./kanban.module.css";
 import { Kanban as KanbanType } from "../../types/Kanban";
-import { kanbanMock } from "./kanbanMock";
 import Column from "./components/Column";
+import { kanbanMock } from "./kanbanMock";
 
 export default function Kanban() {
   const kanban: KanbanType = kanbanMock;

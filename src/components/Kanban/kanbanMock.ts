@@ -11,7 +11,7 @@ export const kanbanMock: Kanban = {
           description: "Task 1",
           status: "done",
           responsible: "user",
-          labels: ["Home", "Office"],
+          labels: ["Home", "Office", "Desktop"],
         },
         {
           id: "2",
@@ -28,10 +28,10 @@ export const kanbanMock: Kanban = {
       tasks: [
         {
           id: "3",
-          description: "Task 3",
+          description: "Task 3333333333333333333333333333333 azsdasdas",
           status: "done",
           responsible: "user",
-          labels: ["Home", "Office"],
+          labels: ["Office Test 1","Office Test 2","Home", "Office",],
         },
       ],
     },

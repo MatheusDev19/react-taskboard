@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Box, IconButton, Menu, MenuItem } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import styles from "./navigation-item.module.css";
 
 interface NavigationItemProps {
   title: string;
@@ -20,29 +21,11 @@ export default function NavigationItem({ title, icon, subItems }: NavigationItem
   const handleClose = () => {
     setAnchorEl(null);
   };
+
   return (
-    <Box>
-      <IconButton
-        sx={{
-          "& .MuiBottomNavigationAction-label": {
-            color: "#ffffff",
-          },
-          "&.Mui-selected": {
-            "& .MuiBottomNavigationAction-label": {
-              color: "#ffffff",
-            },
-          },
-          "&:hover": {
-            backgroundColor: "transparent",
-          },
-          "&:active": {
-            backgroundColor: "#8e86ffce",
-            transition: "background-color 0.3s ease",
-          },
-        }}
-        onClick={handleClick}
-      >
-        <Box component="img" src={icon} alt={`${title} Icon`} />
+    <Box className={styles["navigation-item"]}>
+      <IconButton className={styles["icon-button"]} onClick={handleClick} disableRipple>
+        <Box component="img" src={icon} alt={`${title} Icon`} className={styles["icon-img"]} />
       </IconButton>
 
       {subItems.length > 0 && (
@@ -51,6 +34,7 @@ export default function NavigationItem({ title, icon, subItems }: NavigationItem
           anchorEl={anchorEl}
           open={open}
           onClose={handleClose}
+          className={styles.menu}
           slotProps={{
             list: {
               "aria-labelledby": "item-button",
@@ -58,7 +42,14 @@ export default function NavigationItem({ title, icon, subItems }: NavigationItem
           }}
         >
           {subItems.map((subItem) => (
-            <MenuItem key={subItem.title} onClick={() => navigate(subItem.url)}>
+            <MenuItem
+              key={subItem.title}
+              onClick={() => {
+                navigate(subItem.url);
+                handleClose();
+              }}
+              className={styles["menu-item"]}
+            >
               {subItem.title}
             </MenuItem>
           ))}

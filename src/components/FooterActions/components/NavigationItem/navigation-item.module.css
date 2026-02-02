@@ -1,0 +1,43 @@
+.navigation-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-button {
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.icon-button:hover {
+  background-color: transparent;
+}
+
+.icon-button:active {
+  background-color: #8e86ffce;
+}
+
+.icon-img {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+.menu {
+  min-width: 120px;
+}
+
+.menu-item {
+  font-size: 1rem;
+  color: #333;
+}
+
+.menu-item:hover {
+  background-color: #f0f0f0;
+}

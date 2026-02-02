@@ -1,6 +1,7 @@
 import { Stack, Box, Typography } from "@mui/material";
 import { KanbanColumn } from "../../../../types/Kanban";
 import styles from "./column.module.css";
+import Task from "../Task";
 
 interface ColumnProps {
   column: KanbanColumn;
@@ -13,6 +14,9 @@ export default function Column({ column }: ColumnProps) {
         <Typography className={styles["column-name"]}>{column.name}</Typography>
         <Box className={styles["task-count"]}>{column.tasks.length}</Box>
       </Box>
+      {column.tasks.map((task, index) => (
+        <Task key={index} task={task} />
+      ))}
     </Stack>
   );
 }
