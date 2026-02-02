@@ -35,8 +35,28 @@ export const kanbanMock: Kanban = {
         },
       ],
     },
-    {
+     {
       id: "3",
+      name: "On Review",
+      tasks: [
+        {
+          id: "4",
+          description: "Task 4",
+          status: "done",
+          responsible: "user",
+          labels: ["Home", "Office"],
+        },
+        {
+          id: "5",
+          description: "Task 5",
+          status: "done",
+          responsible: "user",
+          labels: ["Home", "Office"],
+        },
+      ],
+    },
+    {
+      id: "4",
       name: "Done",
       tasks: [
         {
