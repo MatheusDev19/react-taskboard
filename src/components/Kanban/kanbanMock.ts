@@ -60,15 +60,15 @@ export const kanbanMock: Kanban = {
       name: "Done",
       tasks: [
         {
-          id: "4",
-          description: "Task 4",
+          id: "6",
+          description: "Task 6",
           status: "done",
           responsible: "user",
           labels: ["Home", "Office"],
         },
         {
-          id: "5",
-          description: "Task 5",
+          id: "7",
+          description: "Task 7",
           status: "done",
           responsible: "user",
           labels: ["Home", "Office"],
