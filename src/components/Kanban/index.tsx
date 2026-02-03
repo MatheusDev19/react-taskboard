@@ -3,12 +3,13 @@ import styles from "./kanban.module.css";
 import { KanbanColumn, Kanban as KanbanType } from "../../types/Kanban";
 import Column from "./components/Column";
 import { kanbanMock } from "./kanbanMock";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useGetSlug } from "../../hooks/use-get-slug";
 
 export default function Kanban() {
-  const kanban: KanbanType = kanbanMock;
+  const slug = useGetSlug();
 
-  const [columns, setColumns] = useState<KanbanColumn[]>(kanban.columns);
+  const [columns, setColumns] = useState<KanbanColumn[]>([]);
 
   function handleDragStart(e: React.DragEvent<HTMLDivElement>, columnIdx: number, taskIdx: number) {
     const key = `${columnIdx}-${taskIdx}`;
@@ -50,6 +51,16 @@ export default function Kanban() {
   function handleDragOver(e: React.DragEvent<HTMLDivElement>) {
     e.preventDefault();
   }
+
+  useEffect(() => {
+    const fetchKanban = () => {
+      const kanban: KanbanType | undefined = kanbanMock.find((kanban) => kanban.slug === slug);
+      if (!kanban) return;
+      setColumns(kanban.columns);
+    };
+
+    fetchKanban();
+  }, [slug]);
 
   return (
     <Box className={styles["wrapper"]}>

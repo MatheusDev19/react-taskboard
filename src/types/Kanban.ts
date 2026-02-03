@@ -1,4 +1,5 @@
 interface Kanban {
+  slug: string;
   columns: KanbanColumn[];
 }
 
