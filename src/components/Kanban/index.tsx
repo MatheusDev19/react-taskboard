@@ -32,6 +32,7 @@ export default function Kanban() {
         if (sourceColumnIdx === destColumnIdx) {
           newTasks.splice(dropIdx, 0, draggedTask);
         }
+
         return { ...col, tasks: newTasks };
       }
 

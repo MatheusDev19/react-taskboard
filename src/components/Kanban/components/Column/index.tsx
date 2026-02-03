@@ -8,7 +8,7 @@ interface ColumnProps {
   handleDragStart: (e: React.DragEvent<HTMLDivElement>, index: number) => void;
   handleDrop: (e: React.DragEvent<HTMLDivElement>, index: number) => void;
   handleDragOver: (e: React.DragEvent<HTMLDivElement>) => void;
-  onDrop: (e: React.DragEvent<HTMLDivElement>) => void;
+  onDrop: (e: React.DragEvent<HTMLDivElement>, index: number) => void;
 }
 
 export default function Column({
@@ -19,11 +19,12 @@ export default function Column({
   onDrop,
 }: ColumnProps) {
   return (
-    <Stack className={styles["column"]} onDrop={onDrop} onDragOver={handleDragOver}>
+    <Stack className={styles["column"]}>
       <Box className={styles["status-bar"]}>
         <Typography className={styles["column-name"]}>{column.name}</Typography>
         <Box className={styles["task-count"]}>{column.tasks.length}</Box>
       </Box>
+
       {column.tasks.map((task, taskIdx) => (
         <Task
           key={taskIdx}
@@ -33,6 +34,13 @@ export default function Column({
           handleDragOver={handleDragOver}
         />
       ))}
+      {
+        <Box
+          onDragOver={handleDragOver}
+          onDrop={(e) => onDrop(e, column.tasks.length - 1)}
+          sx={{ height: "100%" }}
+        />
+      }
     </Stack>
   );
 }
