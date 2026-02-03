@@ -5,25 +5,22 @@ import generic_avatar from "../../../../assets/kanban/generic_avatar.svg";
 import styles from "./task.module.css";
 import { TaskLabels } from "./TaskLabel";
 
+import { useSortable } from "@dnd-kit/sortable";
+import { CSS } from "@dnd-kit/utilities";
+
 interface TaskProps {
   task: KanbanTask;
-  handleDragStart: (e: React.DragEvent<HTMLDivElement>) => void;
-  handleDragOver: (e: React.DragEvent<HTMLDivElement>) => void;
-  handleDrop: (e: React.DragEvent<HTMLDivElement>) => void;
 }
 
-export default function Task({ task, handleDragStart, handleDrop, handleDragOver }: TaskProps) {
+export default function Task({ task }: TaskProps) {
+  const { attributes, listeners, setNodeRef, transform, transition } = useSortable({ id: task.id });
+  const style = {
+    transition,
+    transform: CSS.Transform.toString(transform),
+  };
+
   return (
-    <Box
-      className={styles["task-card"]}
-      draggable={true}
-      onDragStart={handleDragStart}
-      onDrop={handleDrop}
-      onDragOver={handleDragOver}
-      onClick={() => {
-        console.log("Click no card");
-      }}
-    >
+    <Box ref={setNodeRef} style={style} className={styles["task-card"]}>
       <Stack className={styles["task-content"]}>
         <Typography className={styles["task-description"]}>{task.description}</Typography>
         <Box className={styles["task-card-footer"]}>
@@ -31,11 +28,14 @@ export default function Task({ task, handleDragStart, handleDrop, handleDragOver
             <TaskLabels labels={task.labels} />
           </Box>
           <IconButton
+            {...attributes}
+            {...listeners}
             onClick={(e) => {
               e.stopPropagation();
               e.preventDefault();
               console.log("Click no botão");
             }}
+            style={{ touchAction: "none" }}
           >
             <Box
               component="img"

@@ -3,10 +3,11 @@
   min-width: 272px;
   height: 100%;
   border-radius: 8px;
-  gap: 8px;
+  gap: 16px;
   background-color: #d7d7d7;
   padding: 4px;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .status-bar {

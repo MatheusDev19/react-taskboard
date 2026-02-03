@@ -7,11 +7,11 @@
   overflow: hidden;
   background-color: #fff;
   border-top: 6px solid #4f46e5;
-  cursor: pointer;
+  cursor: grab;
 }
 
 .task-card:active {
-    background-color: #fff;
+  opacity: 0.6;
 }
 
 .task-content {

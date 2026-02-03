@@ -1,46 +1,37 @@
 import { Stack, Box, Typography } from "@mui/material";
-import { KanbanColumn } from "../../../../types/Kanban";
+import { KanbanColumn, KanbanTask } from "../../../../types/Kanban";
 import styles from "./column.module.css";
 import Task from "../Task";
 
+import { SortableContext, verticalListSortingStrategy } from "@dnd-kit/sortable";
+import { useDroppable } from "@dnd-kit/core";
+
 interface ColumnProps {
   column: KanbanColumn;
-  handleDragStart: (e: React.DragEvent<HTMLDivElement>, index: number) => void;
-  handleDrop: (e: React.DragEvent<HTMLDivElement>, index: number) => void;
-  handleDragOver: (e: React.DragEvent<HTMLDivElement>) => void;
-  onDrop: (e: React.DragEvent<HTMLDivElement>, index: number) => void;
+  tasks: KanbanTask[];
 }
 
-export default function Column({
-  column,
-  handleDragStart,
-  handleDragOver,
-  handleDrop,
-  onDrop,
-}: ColumnProps) {
+export default function Column({ column, tasks }: ColumnProps) {
+  const { setNodeRef, isOver } = useDroppable({ id: column.id });
   return (
     <Stack className={styles["column"]}>
       <Box className={styles["status-bar"]}>
         <Typography className={styles["column-name"]}>{column.name}</Typography>
-        <Box className={styles["task-count"]}>{column.tasks.length}</Box>
+        <Box className={styles["task-count"]}>{tasks.length}</Box>
       </Box>
-
-      {column.tasks.map((task, taskIdx) => (
-        <Task
-          key={taskIdx}
-          task={task}
-          handleDragStart={(e) => handleDragStart(e, taskIdx)}
-          handleDrop={(e) => handleDrop(e, taskIdx)}
-          handleDragOver={handleDragOver}
-        />
-      ))}
-      {
+      <SortableContext items={tasks.map((t) => t.id)} strategy={verticalListSortingStrategy}>
+        {tasks.map((task) => (
+          <Task key={task.id} task={task} />
+        ))}
         <Box
-          onDragOver={handleDragOver}
-          onDrop={(e) => onDrop(e, column.tasks.length - 1)}
-          sx={{ height: "100%" }}
+          ref={setNodeRef}
+          sx={{
+            height: tasks.length === 0 ? "120px" : "24px",
+            bgcolor: isOver ? "#c4c4c4" : "transparent",
+            transition: "background 0.2s",
+          }}
         />
-      }
+      </SortableContext>
     </Stack>
   );
 }
