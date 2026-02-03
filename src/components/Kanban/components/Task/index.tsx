@@ -8,8 +8,8 @@ import { TaskLabels } from "./TaskLabel";
 interface TaskProps {
   task: KanbanTask;
   handleDragStart: (e: React.DragEvent<HTMLDivElement>) => void;
-  handleDrop: (e: React.DragEvent<HTMLDivElement>, targetId: string) => void;
   handleDragOver: (e: React.DragEvent<HTMLDivElement>) => void;
+  handleDrop: (e: React.DragEvent<HTMLDivElement>) => void;
 }
 
 export default function Task({ task, handleDragStart, handleDrop, handleDragOver }: TaskProps) {
@@ -18,7 +18,7 @@ export default function Task({ task, handleDragStart, handleDrop, handleDragOver
       className={styles["task-card"]}
       draggable={true}
       onDragStart={handleDragStart}
-      onDrop={(e) => handleDrop(e, task.id)}
+      onDrop={handleDrop}
       onDragOver={handleDragOver}
       onClick={() => {
         console.log("Click no card");
