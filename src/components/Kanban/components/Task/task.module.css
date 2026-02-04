@@ -7,7 +7,7 @@
   overflow: hidden;
   background-color: #fff;
   border-top: 6px solid #4f46e5;
-  cursor: grab;
+  cursor: pointer;
 }
 
 .task-card:active {
@@ -29,6 +29,7 @@
   -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
   word-break: break-all;
+  padding-right: 36px; 
 }
 
 .task-card-footer {
@@ -46,4 +47,38 @@
   width: 24px;
   height: 24px;
   display: block;
+}
+
+
+.drag-handle {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: grab;
+  z-index: 2;
+}
+
+.drag-handle:active {
+  cursor: grabbing;
+}
+
+.grab-bars {
+  width: 16px;
+  height: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3px;
+}
+
+.grab-bar {
+  width: 100%;
+  height: 2px;
+  background: #bbb;
+  border-radius: 2px;
 }

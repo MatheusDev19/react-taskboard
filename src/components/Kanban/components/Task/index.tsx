@@ -20,7 +20,23 @@ export default function Task({ task }: TaskProps) {
   };
 
   return (
-    <Box ref={setNodeRef} style={style} className={styles["task-card"]}>
+    <Box
+      ref={setNodeRef}
+      style={{ ...style, position: "relative" }}
+      className={styles["task-card"]}
+    >
+      <Box
+        className={styles["drag-handle"]}
+        {...attributes}
+        {...listeners}
+        style={{ touchAction: "none" }}
+      >
+        <Box className={styles["grab-bars"]}>
+          <Box className={styles["grab-bar"]} />
+          <Box className={styles["grab-bar"]} />
+          <Box className={styles["grab-bar"]} />
+        </Box>
+      </Box>
       <Stack className={styles["task-content"]}>
         <Typography className={styles["task-description"]}>{task.description}</Typography>
         <Box className={styles["task-card-footer"]}>
@@ -28,14 +44,11 @@ export default function Task({ task }: TaskProps) {
             <TaskLabels labels={task.labels} />
           </Box>
           <IconButton
-            {...attributes}
-            {...listeners}
             onClick={(e) => {
               e.stopPropagation();
               e.preventDefault();
               console.log("Click no botão");
             }}
-            style={{ touchAction: "none" }}
           >
             <Box
               component="img"
